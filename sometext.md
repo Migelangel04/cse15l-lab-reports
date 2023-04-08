@@ -60,9 +60,9 @@ print '3 backticks or'
 print 'indent 4 spaces'
 ```
 
-This is the end of the tutorial 
-Look at the source code for reference on how to use Markup for Github pages.
-Or go th link present here: [Cheat Sheet](https://commonmark.org/help/)
+This is the end of the tutorial  
+Look at the source code for reference on how to use Markup for Github pages.  
+Or go th link present here: [Cheat Sheet](https://commonmark.org/help/)  
 
 
 
