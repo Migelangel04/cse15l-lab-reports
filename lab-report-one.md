@@ -15,7 +15,7 @@ $ sudo apt-get -y install wget
 ```
 
 ## Step 1.1: Add the repository and key to VS Code
-Using the commands writing in the block code below, we will be able to install the APT repository key to our system. 
+Using the commands writing in the block code below, we will be able to install the APT repository key to our system. An APT repository is a collection of deb (debian) packages with metadata that is readable by the apt-* family of tools, namely, apt-get.
 
 ```
 BASH:
@@ -34,7 +34,7 @@ $ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode
 ```
 
 ## Step 1.3 Update the APT and install/run VS Code 
-Run the update of the APT package catalog and then install VS Code.
+Run the update of the APT package catalog and then install VS Code. The update will give your the latest version of VS Code and the install will install it to the computer.
 
 ```
 BASH:
@@ -72,7 +72,20 @@ RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 
-Type yes in the terminal to contiune
+Type 'yes' in the terminal to contiune after this message appears. This will prompt a password verfication where you will type the course specific password that came with your course specfic username. This should be the password you made when reseting your account. Once you have your password, save it as it will be used to log into the UCSD Linux terminals.
+
+The terminal should look something like this after login: 
+
+![Image](https://migelangel04.github.io/cse15l-lab-reports/UCSDTerminalCSE15L.png)
+
+## Step 3: Terminal Commands
+
+There are multitude of commands that the Linux Kernal utilizes however the ones that have been discussed in class so far are `cd`, `ls`, `pwd`, `mkdir`, and `cp`. These commands are vital in trying to navigate the file system using the terminal. Here I am demonstrating the use of some of these commands on the UCSD Linux servers using the terminal from the pervious step:  
+
+![Image](https://migelangel04.github.io/cse15l-lab-reports/TerminalCommands.png)
+
+This concludes the lesson!
+
 
 
 
