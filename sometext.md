@@ -18,6 +18,8 @@ __This is another way__
 
 [1]: https://ucsd-cse15l-s23.github.io/week/week1/
 
-![Image](
+![Image](cse15l-lab-reports/IMG_3541.JPG)
+
+
 
 
