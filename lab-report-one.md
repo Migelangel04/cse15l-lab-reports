@@ -84,16 +84,6 @@ There are multitude of commands that the Linux Kernal utilizes however the ones 
 
 ![Image](https://migelangel04.github.io/cse15l-lab-reports/TerminalCommands.png)
 
-This concludes the lesson!
-
-
-
-
-
-
-
-
-
-
-
-
+To exit the UCSD servers, use one of the following commands on the Terminal:
+- `Ctrl+D`
+- `exit`
