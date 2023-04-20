@@ -80,7 +80,15 @@ The terminal should look something like this after login:
 
 ## Step 3: Terminal Commands
 
-There are multitude of commands that the Linux Kernal utilizes however the ones that have been discussed in class so far are `cd`, `ls`, `pwd`, `mkdir`, and `cp`. These commands are vital in trying to navigate the file system using the terminal. Here I am demonstrating the use of some of these commands on the UCSD Linux servers using the terminal from the pervious step:  
+There are multitude of commands that the Linux Kernal utilizes however the ones that have been discussed in class so far are:
+
+- `cd` which stands for "Change Directory" and changes the working directory.
+- `ls` stands for "list" and it lists all the directories within the current directory as well as any files.
+- `pwd` prints the "working directory" to the terminal screen.
+- `mkdir` makes a directory in the current directory or in the specified directory (makes a folder).
+- `cp` copies the a file or directory to another location in the local machine or remote server.
+
+These commands are vital in trying to navigate the file system using the terminal. Here I am demonstrating the use of some of these commands on the UCSD Linux servers using the terminal from the pervious step:  
 
 ![Image](https://migelangel04.github.io/cse15l-lab-reports/TerminalCommands.png)
 
