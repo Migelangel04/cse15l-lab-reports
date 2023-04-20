@@ -88,7 +88,7 @@ There are multitude of commands that the Linux Kernal utilizes however the ones 
 - `mkdir` makes a directory in the current directory or in the specified directory (makes a folder).
 - `cp` copies the a file or directory to another location in the local machine or remote server.
 
-These commands are vital in trying to navigate the file system using the terminal. Here I am demonstrating the use of some of these commands on the UCSD Linux servers using the terminal from the pervious step:  
+These commands are vital in trying to navigate the file system using the terminal. Here I am demonstrating the use of some of these commands on my Operating System using the terminal (but these commands can be ran on the UCSD server as well) from the pervious step:  
 
 ![Image](https://migelangel04.github.io/cse15l-lab-reports/TermCommands.png)
 
