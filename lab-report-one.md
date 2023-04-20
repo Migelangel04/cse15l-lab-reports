@@ -90,7 +90,7 @@ There are multitude of commands that the Linux Kernal utilizes however the ones 
 
 These commands are vital in trying to navigate the file system using the terminal. Here I am demonstrating the use of some of these commands on the UCSD Linux servers using the terminal from the pervious step:  
 
-![Image](https://migelangel04.github.io/cse15l-lab-reports/TerminalCommands.png)
+![Image](https://migelangel04.github.io/cse15l-lab-reports/TermCommands.png)
 
 To exit the UCSD servers, use one of the following commands on the Terminal:
 - `Ctrl+D`
