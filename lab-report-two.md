@@ -2,7 +2,7 @@
 
 ## Part One: StringServer
 
-In this lab report, I made two files of code, one called "Server.java" and "StringServer.java".
+In this lab report, I utilized two files of code, one called "Server.java" and "StringServer.java".
 Here is the code for Server.java:
 
 ```
@@ -56,7 +56,7 @@ public class Server {
 }
 ```
 
-In the Server.java file, I used the file given in Lab 2 to access the server and StringServer.java and start a new server on the local host. I attempted
+In the Server.java file, I used the file given in Lab 2 to access the server and StringServer.java to start a new server on the local host (aka my machine). I attempted
 to change the domain name of "localhost" to "stringserver" but after conducting research and experimenting, I realized the only way to change 
 the server name is to change it using `sudo nano /etc/hosts` on the terminal and then changing the hostname to "stringserver". However, the terminals
 at UCSD to do not give sudo commands to the students and modifying it on my machine would change my machine settings, so I stuck with localhost as the hostname.
@@ -110,7 +110,7 @@ public class StringServer
 
 ```
 
-StringServer.java has two tasks, retrieve the port number from the user and use the Handler class to output the string message to the web page. As we can see, StringServer has a main class which is charge of starting the local server with the designated port number. Start the server is done using the terminal as shown:
+StringServer.java has two tasks, retrieve the port number from the user and use the Handler class to output the string message to the web page. As we can see, StringServer has a main class which is charge of starting the local server with the designated port number. Starting the server is done using the terminal as shown:
 
 ![Image](https://migelangel04.github.io/cse15l-lab-reports/LabReport2(3).png)
 
@@ -121,7 +121,7 @@ First Image:
 
 ![Image](https://migelangel04.github.io/cse15l-lab-reports/LabReport2(1).png)
 
-In this first alteration of the webpage, I input `/add-message?s=Hello my name is Migelangel!` to the search bar after 'localhost:8000'. After the command is input, the handle request is sent to the Hanlder class with implements the URLHandler interface which implements the `handleRequest(URI url)` method. The `url` parameter contains the request input from the search bar. With this information, the StringServer.java file processes the URI. First, it is sent into the if statement to see if "/add-message" is contained within the URI and after grabs the query, `?`, and splits the contents after the query into an array. This is done in the "String[] parameter" line of the code. Then after the protacols are taken, the String `message` is altered with the intended string after the equals sign. The `message` is appended (not replaced) to the string along with the new line (\n) sequence. This process then outputs "Hello my name is Migelangel!" to the webpage.
+In this first alteration of the webpage, I input `/add-message?s=Hello my name is Migelangel!` to the search bar after 'localhost:8000'. After the command is input, the handle request is sent to the Hanlder class which implements the URLHandler interface using the `handleRequest(URI url)` method. The `url` parameter contains the request input from the search bar. With this information, the StringServer.java file processes the URI. First, it is sent into the if statement to see if "/add-message" is contained within the URI and after grabs the query, `?`, and splits the contents after the query into an array. This is done in the "String[] parameter" line of the code. Then after the protacols are taken, the String `message` is altered with the intended string after the equals sign in the URI. The `message` is appended (not replaced) to the string along with the new line (\n) sequence. This process then outputs "Hello my name is Migelangel!" to the webpage.
 
 Using similar methods, we obtain our second alteration:
 
@@ -186,6 +186,7 @@ import org.junit.*;
 public class ArrayTests {
 
   @Test 
+  //Sucessful Testing
   public void testReverseInPlace1()
   {
     int[] input = {};
@@ -194,6 +195,7 @@ public class ArrayTests {
   }
 
   @Test 
+  //Failure Inducing
   public void testReverseInPlace2()
   {
     int[] input1 = {1, 2, 3, 4, 5, 6};
@@ -202,6 +204,7 @@ public class ArrayTests {
   }
 
   @Test
+  //Failure Inducing
   public void testReverseInPlace3()
   {
     int[] input1 = {1, 2, 3, 4, 5, 6, 7};
@@ -216,9 +219,9 @@ JUnit Terminal testing:
 
 ![Image](https://migelangel04.github.io/cse15l-lab-reports/LabReport2(6).png)
 
-As we can see, I ran three test for this method; testReversedInPlace1(), testReversedInPlace2(), and testReversedInPlace3(). In the first test I passed in an empty `int` array and it returned with a sucessful test, meaning an input that did not induce a failure. 
+As we can see, I ran three test for this method; testReversedInPlace1(), testReversedInPlace2(), and testReversedInPlace3(). In the first test I passed in an empty `int` array and it returned with a sucessful test, meaning an input that did not induce a failure symptom. 
 
-However, with the other two tests, there were noticeable failures. In testReversedInPlace2, I passed in an array of length 6 starting at one and ending at six and expected the values to be in reverse order (i.e. 6, 5, 4, 3, 2, 1) however in the JUnit test, the element at element 3 was suppose to be 3 but instead was 4. Moreover, in testReversedInPlace3 the same issue occurred but in this case, the lenth of the array is 7 and the element of error was 4. 
+However, with the other two tests, there were noticeable failure symptoms. In testReversedInPlace2, I passed in an array of length 6 starting at one and ending at six and expected the values to be in reverse order (i.e. 6, 5, 4, 3, 2, 1) however in the JUnit test, the element at element 3 was suppose to be 3 but instead was 4. Moreover, in testReversedInPlace3 the same issue occurred but in this case, the lenth of the array is 7 and the element of error was 4. 
 
 Notice how the error happens after the midpoint of the array for an odd length array and at the midpoint for an array of even length (excluding length 0 and 1).
 
@@ -250,7 +253,7 @@ The two major changes made was `arr.length / 2` in the conditional statement of 
 
 ## Part Three
 
-Two interesting things I learned in lab was starting a server using basic lines of java code and the use of JUnit using the terminal on VSCode. I never knew that the backend of webpages worked similar to the code presented in Lab 2 (of course at a much more complicated degree) and it really sparked my interest in learning more about backend web development. Moreover, the use of VSCode and JUnit is very useful, especially now in CSE12, because it allowed me to get more comfortable with the terminal and gives me way to use JUnit testing without having to use Eclipse all the time. 
+Two interesting things I learned in lab was starting a server using basic lines of java code and the use of JUnit using the terminal on VSCode. I never knew that the backend of webpages worked similar to the code presented in Lab 2 (of course at a much more complicated degree) and it really sparked my interest in learning more about backend web development. Moreover, the use of VSCode and JUnit is very useful, especially in CSE12, because it allows me to get more comfortable with the terminal and gives me a way to use JUnit testing without having to use Eclipse all the time. 
 
 
 
