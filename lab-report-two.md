@@ -6,6 +6,7 @@ In this lab report, I utilized two files of code, one called "Server.java" and "
 Here is the code for Server.java:
 
 ```
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -54,6 +55,7 @@ public class Server {
         System.out.println("Server Started! Visit http://localhost:" + port + " to visit.");
     }
 }
+
 ```
 
 In the Server.java file, I used the file given in Lab 2 to access the server and StringServer.java to start a new server on the local host (aka my machine). I attempted
@@ -66,6 +68,7 @@ The port number gives users a way to identify a specific process to which an int
 StringServer.java to run:
 
 ```
+
 import java.io.IOException;
 import java.net.URI;
 
@@ -136,6 +139,7 @@ For this part of the Lab Report, I will be referring to the files ArrayExamples.
 Here is the Original code for the ArrayExamples.java:
 
 ```
+
 public class ArrayExamples {
 
   // Changes the input array to be in reversed order
@@ -173,6 +177,7 @@ public class ArrayExamples {
 
 
 }
+
 ```
 
 This is the code we started with in Lab 3 and here is the Testing and results for this particular method:
@@ -180,6 +185,7 @@ This is the code we started with in Lab 3 and here is the Testing and results fo
 Code (One Non-failure Inducing Input and Two Failure Inducing):
 
 ```
+
 import static org.junit.Assert.*;
 import org.junit.*;
 
@@ -213,6 +219,7 @@ public class ArrayTests {
   }
 
 }
+
 ```
 
 JUnit Terminal testing:
@@ -228,16 +235,19 @@ Notice how the error happens after the midpoint of the array for an odd length a
 This is the method that caused the error:
 
 ```
+
 static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
     }
   }
+  
 ```
 
 This would be a potiential solution:
 
 ```
+
 static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length / 2 ; i += 1) {
       int dummyOne = arr[i];
