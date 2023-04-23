@@ -127,7 +127,130 @@ Using similar methods, we obtain our second alteration:
 
 ![Image](https://migelangel04.github.io/cse15l-lab-reports/LabReport2(2).png)
 
+Similar steps where taken as with the pervious method however, instead of the `message` string being completely replaced, we instead appended the new string input to our pervious input. This was accomplished by the `+=` operation for string addition and since we did not restart the server or use a different port, the values of Image One were saved.
 
+## Part Two
+
+For this part of the Lab Report, I will be referring to the files ArrayExamples.java and ArrayTest.java from Lab 3. In particular, the bug that I have choosen to discuss is the method `reverseInPlace(int[] arr)` in ArrayExamples.java. 
+
+Here is the Original code for the ArrayExamples.java:
+
+```
+public class ArrayExamples {
+
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+
+  // Returns a *new* array with all the elements of the input array in reversed
+  // order
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+
+  // Averages the numbers in the array (takes the mean), but leaves out the
+  // lowest number when calculating. Returns 0 if there are no elements or just
+  // 1 element in the array
+  static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
+    }
+    double sum = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
+    }
+    return sum / (arr.length - 1);
+  }
+
+
+}
+```
+
+This is the code we started with in Lab 3 and here is the Testing and results for this particular method:
+
+Code (One Non-failure Inducing Input and Two Failure Inducing):
+
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class ArrayTests {
+
+  @Test 
+  public void testReverseInPlace1()
+  {
+    int[] input = {};
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{}, input);
+  }
+
+  @Test 
+  public void testReverseInPlace2()
+  {
+    int[] input1 = {1, 2, 3, 4, 5, 6};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{6, 5, 4, 3, 2, 1}, input1);
+  }
+
+  @Test
+  public void testReverseInPlace3()
+  {
+    int[] input1 = {1, 2, 3, 4, 5, 6, 7};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{7, 6, 5, 4, 3, 2, 1}, input1);
+  }
+
+}
+```
+
+JUnit Terminal testing:
+
+![Image](https://migelangel04.github.io/cse15l-lab-reports/LabReport2(6).png)
+
+As we can see, I ran three test for this method; testReversedInPlace1(), testReversedInPlace2(), and testReversedInPlace3(). In the first test I passed in an empty `int` array and it returned with a sucessful test, meaning an input that did not induce a failure. 
+
+However, with the other two tests, there were noticeable failures. In testReversedInPlace2, I passed in an array of length 6 starting at one and ending at six and expected the values to be in reverse order (i.e. 6, 5, 4, 3, 2, 1) however in the JUnit test, the element at element 3 was suppose to be 3 but instead was 4. Moreover, in testReversedInPlace3 the same issue occurred but in this case, the lenth of the array is 7 and the element of error was 4. 
+
+Notice how the error happens after the midpoint of the array for an odd length array and at the midpoint for an array of even length (excluding length 0 and 1).
+
+This is the method that caused the error:
+
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+
+This would be a potiential solution:
+
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length / 2 ; i += 1) {
+      int dummyOne = arr[i];
+      int dummyTwo = arr[arr.length - i - 1];
+      arr[i] = dummyTwo;
+      arr[arr.length - i - 1] = dummyOne;
+    }
+  }
+  
+```
+
+The two major changes made was `arr.length / 2` in the conditional statement of the for loop and the addition of dummy variables in the for loop body. These dummy variables were made to save the values at each end of the array and then transfer them once they were both saved. This makes sure that when coping the values to either side, we keep the values instead of losing them like the pervious code block. Moreover, the conditon change assured we do not copy the newly changed values back to the 2nd half of the array. This takes advantage of integer divison. 
+
+## Part Three
+
+Two interesting things I learned in lab was starting a server using basic lines of java code and the use of JUnit using the terminal on VSCode. I never knew that the backend of webpages worked similar to the code presented in Lab 2 (of course at a much more complicated degree) and it really sparked my interest in learning more about backend web development. Moreover, the use of VSCode and JUnit is very useful, especially now in CSE12, because it allowed me to get more comfortable with the terminal and gives me way to use JUnit testing without having to use Eclipse all the time. 
 
 
 
