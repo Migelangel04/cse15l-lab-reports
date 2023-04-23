@@ -110,7 +110,18 @@ public class StringServer
 
 ```
 
-What StringServer.java does is 
+StringServer.java has two tasks, retrieve the port number from the user and use the Handler class to output the string message to the web page. As we can see, StringServer has a main class which is charge of starting the local server with the designated port number. Start the server is done using the terminal as shown:
+
+[Image](https://migelangel04.github.io/cse15l-lab-reports/LabReport2(3).png)
+
+Now that we have started the server, we can use either the `curl` function in the terminal or webpage search bar to change the contents on the webpage. For 
+simplicity, we will modify the web page using the search bar. 
+
+First Image:
+
+[Image](https://migelangel04.github.io/cse15l-lab-reports/LabReport2(1).png)
+
+In this first alteration of the webpage, I input `/add-message?s=Hello my name is Migelangel!` to the search bar after 'localhost:8000'. After the command is input, the handle request is sent to the Hanlder class with implements the URLHandler interface which implements the `handleRequest(URI url)` method. The `url` parameter contains the request input from the search bar. With this information, the StringServer.java file processes the URI. First, it is sent into the if statement to see if "/add-message" is contained within the URI and after grabs the query, `?`, and splits the contents after the query into an array. This is done in the "String[] parameter" line of the code. Then after the protacols are taken 
 
 
 
