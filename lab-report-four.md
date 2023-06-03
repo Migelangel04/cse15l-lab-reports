@@ -26,8 +26,8 @@ As we can see, we typed in the commands to run JUnit tests within our `ListExamp
 
 The errors we had was in the file `ListExamples.java` so to address these issues, we used the following keys after Step 2: 
 
-`vim ListExamples.java <enter>` which takes our terminal to vim and lets us continue our editing. In Vim, we will use keys: `<i>`to enter insert mode and `<h><h>` ... `<h>` until we reach the last while loop within the file `ListExamples.java` as shown:
-
+`vim ListExamples.java <enter>` which takes our terminal to vim and lets us continue our editing. In Vim, we will use keys: `<i>`to enter insert mode and `<h><h>` ... `<h>` to go from the top of the page to the last while loop (near the bottem of the page) within the file `ListExamples.java`. Since I had my insertion cursor on the left hand side of the file, I only had to press the `<h>` key 41 times to reach the desired location. This location is highlighted by `>>>` below (the final location of my cursor):
+ 
 ```
 import java.util.ArrayList;
 import java.util.List;
